@@ -3,6 +3,8 @@
 
 ## Quick Start
 
+> Requires **Python 3.10+** (3.11 recommended). LangGraph won't install on 3.9.
+
 ```bash
 # 1. Create and activate virtual environment
 python -m venv .venv
@@ -11,8 +13,9 @@ source .venv/bin/activate        # Windows: .venv\Scripts\activate
 # 2. Install all dependencies
 pip install -r requirements.txt
 
-# 3. Copy and fill in your API keys
-cp .env.example .env
+# 3. Copy the env template and add your key
+cp .env.example .env             # Windows: copy .env.example .env
+# then open .env and paste your GROQ_API_KEY (free: https://console.groq.com/keys)
 
 # 4. Verify setup
 python verify_setup.py
@@ -60,12 +63,13 @@ s4_workshop/
 
 | Key | Get it from | Used in |
 |-----|-------------|---------|
-| `OPENAI_API_KEY` | platform.openai.com | All labs |
+| `GROQ_API_KEY` (free) | [console.groq.com/keys](https://console.groq.com/keys) | All labs (default) |
+| `OPENAI_API_KEY` (paid, optional) | [platform.openai.com](https://platform.openai.com/api-keys) | Alternative to Groq |
 | `GITHUB_TOKEN` | github.com/settings/tokens | HW1 GitHub MCP |
 | `TAVILY_API_KEY` | app.tavily.com (free) | Optional search tool |
 
-## Cost tip
-Set `OPENAI_MODEL_NAME=gpt-4o-mini` during labs — same results, 10× cheaper.
+## Model
+Default is Groq's `llama-3.3-70b-versatile` (free, fast). To use OpenAI instead, set `OPENAI_API_KEY` and change `OPENAI_MODEL_NAME=gpt-4o-mini` in `.env`.
 
 ## Series
 S1 ✓ · S2 ✓ · S3 ✓ · **S4 ← you are here** · S5 RAG & Memory · S6 Production

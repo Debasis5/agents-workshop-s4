@@ -23,8 +23,8 @@
       },
       "args": ["/absolute/path/to/s4_workshop/mcp_lab/solution.py"],
       "env": {
-        "OPENAI_API_KEY": "sk-...",
-        "OPENAI_MODEL_NAME": "gpt-4o-mini"
+        "GROQ_API_KEY": "gsk_...",
+        "OPENAI_MODEL_NAME": "llama-3.3-70b-versatile"
       }
     }
   }

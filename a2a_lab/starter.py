@@ -29,7 +29,7 @@ load_dotenv(override=True)
 from fastapi import FastAPI
 from pydantic import BaseModel
 
-MODEL = os.getenv("OPENAI_MODEL_NAME", "gpt-4o-mini")
+MODEL = os.getenv("OPENAI_MODEL_NAME", "llama-3.3-70b-versatile")
 
 app = FastAPI(title="A2A Research Agent", version="1.0.0")
 
@@ -101,7 +101,7 @@ class TaskResponse(BaseModel):
 # Flow:
 #   a. Extract the user's text from request.message["parts"][0]["text"]
 #   b. Store task as "working" in the tasks dict
-#   c. Call the LLM with the user's text (import from openai or langchain_openai)
+#   c. Call the LLM with the user's text (use langchain_groq.ChatGroq, or langchain_openai.ChatOpenAI)
 #   d. Update task status to "completed" with the LLM's response
 #   e. Return a TaskResponse
 #

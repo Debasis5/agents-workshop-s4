@@ -2,11 +2,14 @@
 openai>=1.30.0
 langchain>=0.2.0
 langchain-openai>=0.1.0
+langchain-groq>=0.1.0    # default LLM provider (free tier)
 langchain-community>=0.2.0
 langgraph>=0.1.0
+langchain-classic>=1.0.0 # legacy ReAct/tool-calling agents
 
-# ── MCP ───────────────────────────────────────────────────────────────────────
-mcp[cli]>=1.0.0         # FastMCP + mcp dev inspector
+# ── MCP ─────────────────────────────────────────────────────────────────────────
+mcp[cli]>=1.0.0          # FastMCP + mcp dev inspector
+uv>=0.4.0                # required by 'mcp dev'
 
 # ── A2A (FastAPI server + async HTTP client) ─────────────────────────────────
 fastapi>=0.110.0
